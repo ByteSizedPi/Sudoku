@@ -1,0 +1,12 @@
+<section>
+  <div *ngFor="let row of grid.grid; index as i" class="row">
+    <div
+      class="cell"
+      *ngFor="let cell of row; index as j"
+      (click)="grid.selectCell(i, j)"
+      [ngStyle]="{ backgroundColor: cell.bg }"
+    >
+      {{ cell.value ? cell.value : "" }}
+    </div>
+  </div>
+</section>
